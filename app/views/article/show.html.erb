@@ -4,4 +4,28 @@
 <%= @article.title %>
 <%= @article.body %>
 
-<link_to "編集","article/#{@article.id}/edit">
+<link_to "編集","article/#{@article.id}/edit"><br><br>
+
+
+
+<h2> コメントをする</h2>
+
+<%= form_with(model:[@article, @comment], method: :post) do |f| %>
+ <%= f.text_area :comment_content %>
+  <%= f.hidden_field :article_id, value: @article.id %>
+  <%= f.submit 'コメントする'%>
+  <% end %>
+
+<h2> コメント一覧</h2>
+
+<% @comments.each do |comment| %>
+ <br><br><div>   
+ <%=link_to "#{comment.user.username}","admin/users/#{comment.user.id}" %>
+  <%= comment.comment_content %>  
+  </div><br>
+
+  <% end %>
+
+  <br><br>
+
+<%= link_to 'ホーム', "/" %>
