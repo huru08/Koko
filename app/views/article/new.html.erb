@@ -1,0 +1,24 @@
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<%= form_with url: '/article' do |form|  %>
+<div>
+    <%= form.label :created_at, class: 'control-label' %><br>
+    <%= form.date_select :day, class: 'form-control' %>
+</div>
+<div>
+    <%= form.label :"タイトル", class: 'control-label' %><br>
+    <%= form.text_field :title %>
+</div>
+<div>
+    <%= form.label :"記事", class: 'control-label' %><br>
+    <%= form.text_area :body %>
+</div>
+<div><br>
+    <%= form.submit :"投稿する" %>
+   </div>
+  <% end %>
