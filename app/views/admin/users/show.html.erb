@@ -1,6 +1,10 @@
-<p>名前</p>
-<%= @user.username %>
-<p>ID</p>
-<%= @user.id %>
-<p>アドレス</p>
-<%= @user.email %>
+<div><p>名前</p></div>
+<div><%= @user.username %></div><br><br><br>
+
+
+<div><p>プロフィール</p></div>
+<div><%= @user.profile %></div><br>
+
+<%= link_to"プロフィールの編集","/users/edit" %>
+<%= link_to "戻る", :back %>
+

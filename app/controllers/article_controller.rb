@@ -6,7 +6,9 @@ class ArticleController < ApplicationController
 def show
     @article = Article.find(params[:id])
     @comments = @article.comments 
+    if user_signed_in?
     @comment = current_user.comments.new 
+    end
 end
 
 def new

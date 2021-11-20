@@ -7,7 +7,7 @@
 <link_to "編集","article/#{@article.id}/edit"><br><br>
 
 
-
+<%if user_signed_in?%>
 <h2> コメントをする</h2>
 
 <%= form_with(model:[@article, @comment], method: :post) do |f| %>
@@ -25,7 +25,10 @@
   </div><br>
 
   <% end %>
+<%else%>
+ログインするとコメント機能が使えます。
+  <%end%>
 
   <br><br>
 
-<%= link_to 'ホーム', "/" %>
+  <%= link_to "戻る", :back %>
