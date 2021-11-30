@@ -15,6 +15,9 @@ def create
     @info = Info.new(info_params)
     if @info.save
         redirect_to "/"
+    else
+        redirect_to "/"
+
     end
 end
 
@@ -26,6 +29,9 @@ def update
     @info = Info.find(params[:id])
     if @info.update(info_params_edit)
         redirect_to"/"
+    else
+        redirect_to "/"
+
     end
 
 end

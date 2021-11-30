@@ -1,3 +1,5 @@
+<div class="container text-center">
+
 <br>
 <br>
 <br>
@@ -5,7 +7,7 @@
 <br>
 <%= form_with(model: @article, local: true) do |form| %>
 <div>
-    <%= form.label :created_at, class: 'control-label' %><br>
+    <%= form.label :投稿日, class: 'control-label' %><br>
     <%= form.date_select :day, class: 'form-control' %>
 </div>
 <div>
@@ -20,3 +22,4 @@
     <%= form.submit :"投稿する" %>
    </div>
   <% end %>
+  </div>

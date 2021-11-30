@@ -6,6 +6,8 @@ class User < ApplicationRecord
 
          validates :email, uniqueness: true
          validates :username, uniqueness: true
+         validates :profile,    length: { maximum: 140 }
+
 
          def email_required?
           false
@@ -27,7 +29,7 @@ class User < ApplicationRecord
           clean_up_passwords
           result
         end
-      
+        mount_uploader :profile_image, ImageUploader
 
 
          has_many :comments

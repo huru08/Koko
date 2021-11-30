@@ -1,3 +1,11 @@
+
+<div class="container text-center">
+
+<%if @user.profile_image? %>
+<%= image_tag(@user.profile_image_url, width: 100) %>
+<% end %>
+
+
 <div><p>名前</p></div>
 <div><%= @user.username %></div><br><br><br>
 
@@ -6,5 +14,7 @@
 <div><%= @user.profile %></div><br>
 
 <%= link_to"プロフィールの編集","/users/edit" %>
+<br>
 <%= link_to "戻る", :back %>
 
+</div>

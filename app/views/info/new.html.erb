@@ -1,11 +1,7 @@
-<br>
-<br>
-<br>
-<br>
-<br>
+<div class="container text-center">
 <%= form_with url: '/info' do |form|  %>
 <div>
-    <%= form.label :created_at, class: 'control-label' %><br>
+    <%= form.label :投稿日, class: 'control-label' %><br>
     <%= form.date_select :day, class: 'form-control' %>
 </div>
 <div>
@@ -16,5 +12,6 @@
     <%= form.submit :"投稿する" %>
    </div>
   <% end %>
-
+<br>
   <%= link_to "戻る", :back %>
+  </div>

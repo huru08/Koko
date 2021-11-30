@@ -1,8 +1,4 @@
-<br>
-<br>
-<br>
-<br>
-<br>
+<div class="container text-center">
 <%= form_with(model: @info, local: true) do |form| %>
 <div>
     <%= form.label :"日付", class: 'control-label' %><br>
@@ -16,5 +12,6 @@
     <%= form.submit :"投稿する" %>
    </div>
   <% end %>
-
+<br>
   <%= link_to "戻る", :back %>
+  </div>

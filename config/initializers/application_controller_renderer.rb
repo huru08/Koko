@@ -6,3 +6,5 @@
 #     https: false
 #   )
 # end
+
+Rack::MiniProfiler.config.start_hidden = true

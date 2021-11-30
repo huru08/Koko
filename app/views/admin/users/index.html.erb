@@ -1,8 +1,12 @@
 <% @users.each do |user| %>
-    <%= user.id %>
-    <%= user.created_at %>
-    <%= user.username %>
-    <%=user.password%>
-<%= user%>
+
+    <div>    
+    <%if user.profile_image?%>
+    <%= link_to image_tag("#{user.profile_image_url}", width: 100, alt: "プロフィール画像"),"users/#{user.id}"%>
+    <%else%>
+    <%= link_to image_tag("IMG_title.PNG", width: 100, alt: "プロフィール画像"),"users/#{user.id}"%>
+    <%end%>
+          <%= link_to "#{user.username}","users/#{user.id}" %>
+        </div><br>
 
     <% end %>

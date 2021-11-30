@@ -1,57 +1,61 @@
-<h1>Home#top</h1>
-<p>Find me in app/views/home/top.html.erb</p>
-<%if user_signed_in?%>
-<%= link_to('ユーザー情報', admin_user_path(@user)) %>
-<%end%>
+<div class="container">
+
+
+    <div class="wrap">
+    <div class="parallax bg-01">
+    <div class="hide"><p>
+    <%if user_signed_in?%>
+    <% if current_user.admin? %>
+    <button class="btn-info"><%= link_to "ブログ作成","article/new" %></button><button class="btn-info"><%= link_to "お知らせ作成","info/new" %></button><button class="btn-info"><%= link_to "ファン一覧","admin/users" %></button>
+    <% end %>
+    <%end%>
 
 
 
+    <%if user_signed_in?%>
+    <button class="btn-success"><%= link_to('ユーザー情報', admin_user_path(@user)) %></button><button class="btn-success"><%= link_to('ログアウト', destroy_user_session_path, method: :delete) %></button>
+    <%end%>
+
+    <%if user_signed_in?%>
+    <% else %>
+    <a class="btn btn-warning " href="/users/sign_in" role="button">ログイン</a><a class="btn btn-warning " href="/users/sign_up" role="button">新規登録</a>
+  <%  end %>
+
+    </div></p>
+    
+    </div>
+    <div class="content">
+    
+    <div class="row">
+    <% @articles.each do |article| %>
+      <div class="col-md-3">
+       <div class="card" style="width:75%; margin-top:15%;">
+       <div class="text-center">
+      　　　　<div class="card-body" style="padding:0;"><h6 class="card-title"><%= link_to article.title.truncate(10), "/article/#{article.id}" %></h6></div><div class="card-date"><h10 class="card-subtitle text-muted" style="font-size:80%"><%= link_to "#{article.day}","article/#{article.id}" %></h10></div>
+      <p class="card-text"><%= truncate(article.body, :length => 9) %></p></div>
+    
+      <p><%if user_signed_in?%>
+      <% if current_user.admin? %><%= link_to "編集","article/#{article.id}/edit" %> <%= link_to "削除", "article/#{article.id}", method: :delete %><% end %><% end %></p>
+         </div></div><% end %></div>
+    <br><br>
+    <%= paginate @articles %>
+    
 
 
+    </div>
+    <div class="parallax bg-02"> 
+    <div class=kuu>　　</div>
+     <div class="info">
+    <% @infos.each do |info| %>  
+<dl><dt><%= info.day %></dt><dd> <%= link_to "#{info.content}","info/#{info.id}" %></dd>
 <%if user_signed_in?%>
 <% if current_user.admin? %>
-<%= link_to "ブログ作成","article/new" %>
-<%= link_to "お知らせ作成","info/new" %><br>
+<dd>  <%= link_to "編集","info/#{info.id}/edit" %>     <%= link_to "削除", "info/#{info.id}", method: :delete %></dd>
 <% end %>
-<%end%>
+<% end %>  
 
-
-<div class="row">
-<% @articles.each do |article| %>
-  <div class="col-md-3">
-   <div class="card" style="width:75%; margin-top:15%;">
-    <div class="text-center">
-  　　　　<div class="card-body" style="padding:0;"><h6 class="card-title"><%= link_to article.title.truncate(10), "/article/#{article.id}" %></h6></div><div class="card-date"><h10 class="card-subtitle text-muted" style="font-size:80%"><%= link_to "#{article.day}","article/#{article.id}" %></h10></div>
-  <p class="card-text"><%= truncate(article.body, :length => 9) %></p></div>
-
-  <p><%if user_signed_in?%>
-  <% if current_user.admin? %><%= link_to "編集","article/#{article.id}/edit" %> <%= link_to "削除", "article/#{article.id}", method: :delete %><% end %><% end %></p>
-     </div></div><% end %></div>
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-  <br><br>  <br><br>
-  <br><br>
-
-  <% @infos.each do |info| %>  
-    <%= link_to "#{info.content}","info/#{info.id}" %><br>
-<%= info.day %><br>
-<% if current_user.admin? %>
-<%= link_to "編集","info/#{info.id}/edit" %>
-<%= link_to "削除", "info/#{info.id}", method: :delete %><br>  <br><br>
-
-<% end %>
-<% end %>
+</dl>
+<% end %>  
+    </div>
+    </div>
+    </div>

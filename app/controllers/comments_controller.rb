@@ -4,6 +4,8 @@ class CommentsController < ApplicationController
         @comment = current_user.comments.new(comment_params)
         if @comment.save
             redirect_to "/"
+        else
+            redirect_to "/"
         end
       end
     
