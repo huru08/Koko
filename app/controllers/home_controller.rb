@@ -7,4 +7,8 @@ class HomeController < ApplicationController
      @user = User.find(current_user.id)
    end
 end
+
+def koko
+end
+
 end
