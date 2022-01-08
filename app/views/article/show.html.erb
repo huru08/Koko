@@ -1,9 +1,9 @@
 <div class="container text-center">
 <h1><%= @article.title %></h1>
-<div><%= @article.day %></div><br>
-<div><%= @article.body %></div>
+<div class="ty"><%= @article.day %></div><br>
+<div class="ty"><%=safe_join(@article.body.split("\n"),tag(:br))%></div>
 
-<link_to "編集","article/#{@article.id}/edit"><br><br>
+<%= link_to "編集","article/#{@article.id}/edit" %><br><br>
 
 
 <%if user_signed_in?%>

@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   get '/' => "home#top"
-
+  get '/article/article/:id/edit' => "article#edit"
 
 
   devise_for :users, controllers: {
