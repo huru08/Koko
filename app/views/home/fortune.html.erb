@@ -1,0 +1,22 @@
+
+<div class="container">
+<%= link_to"もう一回","/fortune" %>
+<div class="text-center"><h1><%= @telling[@randam][:title] %></h1>
+<% if @telling[@randam][:pic] == @telling[@randam2][:pic] %>
+<%= image_tag '大吉.jpeg',width: '80%', height: '80%' %>
+<% elsif @picture > 5 %>
+<%= image_tag '中吉.jpeg',width: '80%', height: '80%' %>
+<% else %>
+<%= image_tag '小吉.jpeg',width: '80%', height: '80%' %>
+<% end %>
+</div>
+
+<h2><div><%= @telling[@randam][:body] %></div></h2>
+<h4><div>さすらば、</div></h4>
+<h2><div><%= @telling[@randam2][:under] %></div></h2>
+</div>
+<div class="text-center"><br><br><br><br>
+あなたに幸運があらんことを
+<br><br>
+<%= link_to"ホームへ","/" %>
+</div>
