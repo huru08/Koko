@@ -6,11 +6,11 @@
 <div class="text-center">
 <h1><%= @telling.sample[:title] %></h1>
 <% if @randam == @randam2 %>
-<%= image_tag '大吉.jpeg' %>
+<%= image_tag '大吉.jpeg',width: '80%', height: '80%' %>
 <% elsif @picture > 5 %>
-<%= image_tag '中吉.jpeg' %>
+<%= image_tag '中吉.jpeg',width: '80%', height: '80%' %>
 <% else %>
-<%= image_tag '小吉.jpeg' %>
+<%= image_tag '小吉.jpeg',width: '80%', height: '80%' %>
 <% end %>
 </div>
 
