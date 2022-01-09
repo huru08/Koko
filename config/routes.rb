@@ -1,9 +1,8 @@
 Rails.application.routes.draw do
   get '/' => "home#top"
   get '/koko' => "home#koko"
-  get '/article/article/:id/edit' => "article#edit"
   get '/fortune' => "home#fortune"
-
+  get '/article/article/:id/edit' => "article#edit"
 
   devise_for :users, controllers: {
     registrations: 'users/registrations'

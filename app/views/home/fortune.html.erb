@@ -5,7 +5,7 @@
 
 <div class="text-center">
 <h1><%= @telling[@randam][:title] %></h1>
-<% if @telling[@randam][:pic] == @telling[@randam2][:pic] %>
+<% if @randam == @randam2%>
 <%= image_tag '大吉.jpeg' %>
 <% elsif @picture > 5 %>
 <%= image_tag '中吉.jpeg' %>
@@ -14,9 +14,9 @@
 <% end %>
 </div>
 
-<h2><div><%= @telling[@randam][:body] %></div></h2>
-<h4><div>さすらば、</div></h4>
-<h2><div><%= @telling[@randam2][:under] %></div></h2>
+<h2><%= @telling[@randam][:body] %></h2>
+<h4>さすらば、</h4>
+<h2><%= @telling[@randam2][:under] %></h2>
 
 </div>
 
