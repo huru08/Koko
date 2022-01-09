@@ -12,8 +12,8 @@ def koko
 end
 
 def fortune
-  @randam = rand(5)
-  @randam2 = rand(5)
+  @randam = SecureRandom.random_number(5)
+  @randam2 = SecureRandom.random_number(5)
   @telling = [{title: "晴天の下へ", body: "一番明るい空の下で深呼吸をせよ", under:"幸運があなたを迎えにくることでしょう。", pic: 1},
   {title: "雲を見つめよ", body: "上を見て歩きなさい、", under:"立ちはだかる壁を越える手助けとなるでしょう。", pic: 2},
   {title: "友を観察せよ", body: "近き者に目を向けよ", under:"懐かしい記憶があなたを少し前へ導く事でしょう。", pic: 3},
