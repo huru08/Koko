@@ -4,8 +4,8 @@
 <a href="/fortune">もう一回</a>
 
 <div class="text-center">
-<h1><%= @telling[@randam][:title] %></h1>
-<% if @randam == @randam2%>
+<h1><%= @telling.sample[:title] %></h1>
+<% if @randam == @randam2 %>
 <%= image_tag '大吉.jpeg' %>
 <% elsif @picture > 5 %>
 <%= image_tag '中吉.jpeg' %>
@@ -26,3 +26,4 @@
 <br><br>
 <a href="/">ホームへ</a>
 </div>
+
