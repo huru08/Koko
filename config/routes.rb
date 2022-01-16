@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  get '/' => "home#top"
+  get '/' => "home#top" 
+  get '/1' => "home#plus"
   get '/koko' => "home#koko"
   get '/fortune' => "home#fortune"
   get '/article/article/:id/edit' => "article#edit"

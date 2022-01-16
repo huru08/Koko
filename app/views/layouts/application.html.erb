@@ -7,9 +7,48 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+
+
     <%= javascript_pack_tag 'application' %>
   </head>
-  <body>
+  <body class="hiden">
+
+  <div id="loading" class="position-absolute top-0 start-0 w-100 h-100 d-none">
+  <div class="text-center position-absolute top-50 start-50 w-100 translate-middle">
+      <div class="spinner-border " role="status">
+         <span class="sr-only"></span>
+      </div>
+  </div>
+</div>
+
+
+
+
+
+
+  <div id="splash">
+  <div id="splash-logo"></div>
+  <!--/splash--></div>
+  <div class="splashbg"></div><!---画面遷移用-->
+  <div id="container">
+  <p>ここにメインコンテンツが入ります。</p>
+  <!--/container--></div>
+
+
+
+    <div id="loading" class="position-absolute top-0 start-0 w-100 h-100 d-none">
+       <div class="text-center position-absolute top-50 start-50 w-100 translate-middle">
+           <div class="spinner-border " role="status">
+              <span class="sr-only"></span>
+           </div>
+       </div>
+    </div>
+
+
+
+
+
+
 
      <div class="container">
       <nav class="navbar navbar-light bg-dark  fixed-top" >
@@ -56,15 +95,39 @@
             </div>
        </nav>
     </div>
-    <div class="top"><%= image_tag 'top.PNG' %>  <a class="notice"><%= notice %></a><a class="tn">ブログ更新記録ブログ</a>
+    <div class="top"><%= image_tag 'top.PNG' %>  <a class="notice"><%= notice %></a><span class="tn">ブログ更新記録ブログ</span>
     <a class="notice"><%= notice %></a>
     <%= notice %>
     <a class="alert"><%= alert %></a>
     </div>
-    <br>    <br>
-    <%= yield %>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+   
+    <div id="hai">
+    <div class="hai">
+    <div class="container">
+    
+     <%= yield %>
+
+
+
+
+
+    </div>
+    </div>
+    
+
+
+
+
+
+
+
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-  </body>
+
+   
+
+
+    </body>
 </html>

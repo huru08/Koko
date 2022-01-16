@@ -1,6 +1,10 @@
 @import '~bootstrap/scss/bootstrap';
 
 .top{margin-top:50px;}
+.hiden{
+  overflow: hidden;
+
+}
 
 
 .navbar-brand{margin-left: 25px;}
@@ -13,14 +17,15 @@
 }
 
 
-body{background-color:rgb(89, 88, 88);}
+body{background-color:rgb(255, 255, 255);
+color:rgb(255, 255, 255);}
 .hide{
 p{
   button{margin-top:50px;
     margin-left:25px;}
 
     .btn-warning{margin-top:150px;
-      margin-left:23%;
+      margin-left:13%;
       
         width: 200px !important;
         height: 55px !important;
@@ -39,10 +44,10 @@ a:hover {
 .card-subtitle text-muted{margin-top: -10%;}
 
 .tn{
-  color:rgb(255, 255, 255);
+  color:rgb(0, 0, 0);
   margin-left: 15%;
-  position: relative; bottom:-30px;
-  font-size: 30px;
+  position: relative; bottom:20px;
+  font-size: 32px;
 }
 
 /*ページネーション自体のデザイン*/
@@ -64,7 +69,7 @@ a:hover {
   
 
  .parallax{
-  min-height: 500px;
+  min-height: 650px;
   background-position: center top;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -76,6 +81,7 @@ a:hover {
 //}
 .parallax.bg-01 {
   background-image: url("../../assets/images/back.JPG");
+  background-size: cover;
 }
 .parallax.bg-02 {
   background-image: url("../../assets/images/back.JPG");
@@ -96,4 +102,152 @@ a:hover {
 
 .ty{
   text-align: left
+}
+
+
+
+
+//waveで追加
+.ctn{padding-top:15px;}
+
+
+#loading {
+  background: rgb(0, 0, 0);
+  z-index: 10000;
+}
+
+
+#hai {
+	display:block;
+	width:100%;
+	height: 100%;
+	background:url(../../assets/images/back.JPG); /*固定する背景画像*/
+	background-size:cover; /*背景画像のサイズを指定*/
+	background-attachment: fixed; /*背景画像を固定したままにするかしないか*/
+	text-align: center;
+}
+ 
+.hai {
+	background:rgba( 0, 0, 0, 0.5 ); /*半透明なボックス*/
+	display:inline-block;
+	padding: 20px;
+	width: 100%;
+	text-align: center;
+}
+ 
+
+.log{margin-right:15%;
+
+}
+
+
+
+@media (min-width: 1400px) {
+  /* 横幅が800px以上の場合に適用するスタイル */
+  .tn{
+    color:rgb(0, 0, 0);
+    margin-left: 15%;
+    position: relative; bottom:-40px;
+    font-size: 550%;
+  } 
+
+  .container{max-width: 1600px;}
+
+  .parallax{
+    min-height: 750px;}
+
+
+}
+
+
+
+
+
+
+  /*========= ローディング画面のためのCSS ===============*/
+#splash {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	background: rgb(255, 255, 255);
+	z-index: 5000;
+	text-align:center;
+	color:rgb(255, 255, 255);
+}
+
+#splash-logo {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+
+/*========= 画面遷移のためのCSS ===============*/
+
+/*画面遷移アニメーション*/
+.splashbg{
+    display: none;
+}
+
+/*bodyにappearクラスがついたら出現*/
+body.appear .splashbg{
+	display:block;
+	animation-name:PageAnime;
+	animation-duration:0.8s;
+	animation-timing-function:ease-in-out;
+	animation-fill-mode:forwards;
+    content: "";
+    position:fixed;
+	z-index: 999;
+    width: 50%;
+    height: 100vh;
+    top: 0;
+	left: 0;
+    transform: translateX(-300%) skewX(-45deg);
+    background-color: #333;/*伸びる背景色の設定*/
+}
+
+@keyframes PageAnime{
+	0% {
+		transform-origin:left;
+		transform:translateX(-300%) skewX(-45deg);
+	}
+	100% {
+		transform-origin:left;
+		transform:translateX(500%) skewX(-45deg);
+	}
+}
+
+/*画面遷移の後現れるコンテンツ設定*/
+#container{
+	opacity: 0;/*はじめは透過0に*/
+}
+
+/*bodyにappearクラスがついたら出現*/
+body.appear #container{
+	animation-name:PageAnimeAppear;
+	animation-duration:1s;
+	animation-delay: 0.6s;
+	animation-fill-mode:forwards;
+	opacity: 0;
+}
+
+@keyframes PageAnimeAppear{
+	0% {
+	opacity: 0;
+	}
+	100% {
+	opacity: 1;
+}
+}
+
+
+
+
+
+
+@media (max-width: 500px) {
+  /* 横幅が320px以下の場合に適用するスタイル */
+  .card{margin-left: 20%;}
 }
